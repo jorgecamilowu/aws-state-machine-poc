@@ -1,0 +1,19 @@
+{
+  "StartAt": "Map Greetings",
+  "States": {
+    "Map Greetings": {
+      "Type": "Map",
+      "Iterator": {
+        "StartAt": "CallLambda",
+        "States": {
+          "CallLambda": {
+            "Type": "Task",
+            "Resource": "${HelloHandlerArn}",
+            "End": true
+          }
+        }
+      },
+      "End": true
+    }
+  }
+}
